@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch, Provider } from "react-redux";
 import { createSlice, configureStore } from "@reduxjs/toolkit";
+import "./App.css"
 
 const buttonSlice = createSlice({
   name: "buttons",
