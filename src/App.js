@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch, Provider } from "react-redux";
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
-// Define a slice with initial state
 const buttonSlice = createSlice({
   name: "buttons",
   initialState: {
@@ -22,7 +21,6 @@ const buttonSlice = createSlice({
   }
 });
 
-// Export the action creator for buttonClicked
 export const { buttonClicked } = buttonSlice.actions;
 
 // Create a Redux store with the button slice
@@ -32,7 +30,6 @@ const store = configureStore({
   }
 });
 
-// Define a Button component
 const Button = ({ name }) => {
   const dispatch = useDispatch();
 
@@ -43,7 +40,6 @@ const Button = ({ name }) => {
   return <button onClick={handleClick}>{name}</button>;
 };
 
-// Define a Table component
 const Table = () => {
   const data = useSelector((state) => state.buttons.data);
 
@@ -67,7 +63,6 @@ const Table = () => {
   );
 };
 
-// Define the App component
 const App = () => {
   const buttonNames = Array.from({ length: 30 }, (_, i) => `Button ${i + 1}`);
 
